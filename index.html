@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marwal Handmade</title>
+<title>Marwal Handmade - Ramadan</title>
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -18,12 +18,15 @@
         padding:0;
         background:#e7d8bd; /* بيج رملي */
         color:#333;
+        overflow-x:hidden;
+        position:relative;
     }
 
     header{
         text-align:center;
         padding:70px 20px;
         background:#233416; /* زيتي داكن */
+        position:relative;
     }
 
     header h1{
@@ -31,6 +34,8 @@
         font-size:4.5em;
         color:#e7d8bd;  /* Marwal بيج رملي */
         margin:0;
+        position:relative;
+        z-index:2;
     }
 
     header p{
@@ -38,6 +43,32 @@
         color:#f5f5dc;
         margin-top:10px;
         font-size:1.2em;
+        position:relative;
+        z-index:2;
+    }
+
+    /* زينة المثلثات من فوق */
+    .garland{
+        position:absolute;
+        top:10px;
+        left:50%;
+        transform:translateX(-50%);
+        display:flex;
+        gap:10px;
+        z-index:1;
+    }
+
+    .garland div{
+        width:20px;
+        height:20px;
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        background: linear-gradient(45deg,#f8c7d1,#c6e0f5,#fdf1c7);
+        animation: float 3s infinite alternate;
+    }
+
+    @keyframes float{
+        0%{transform:translateY(0);}
+        100%{transform:translateY(5px);}
     }
 
     /* الأقسام */
@@ -49,7 +80,8 @@
     }
 
     .category{
-        background:white;
+        background:#233416; /* لون الزرار زيتي داكن */
+        color:#e7d8bd; /* لون الكتابة على الزرار */
         border-radius:14px;
         margin:15px;
         width:250px;
@@ -57,19 +89,15 @@
         padding:25px 15px;
         box-shadow:0 8px 18px rgba(0,0,0,0.12);
         cursor:pointer;
-        transition:transform 0.3s;
+        transition:transform 0.3s, background 0.3s;
+        font-family:'Montserrat',sans-serif;
+        font-weight:700;
+        font-size:1.4em;
     }
 
     .category:hover{
         transform: translateY(-8px);
-    }
-
-    .category h3{
-        font-family:'Montserrat',sans-serif;
-        color:#233416; /* زيتي غامق */
-        font-weight:700;
-        font-size:1.4em;
-        margin:0;
+        background:#19250f; /* تغميق خفيف عند الهوف */
     }
 
     /* التواصل */
@@ -106,11 +134,58 @@
         color:white;
         font-family:'Montserrat',sans-serif;
     }
+
+    /* فانوس أسفل يمين */
+    .lantern{
+        position:fixed;
+        bottom:20px;
+        right:20px;
+        width:60px;
+        height:100px;
+        background: linear-gradient(180deg,#f8c7d1,#c6e0f5,#fdf1c7);
+        border-radius:10px;
+        clip-path: polygon(50% 0%, 90% 15%, 80% 100%, 20% 100%, 10% 15%);
+        box-shadow:0 4px 10px rgba(0,0,0,0.2);
+        animation: swing 2s infinite alternate;
+        z-index:2;
+    }
+
+    @keyframes swing{
+        0%{transform: rotate(-5deg);}
+        100%{transform: rotate(5deg);}
+    }
+
+    /* النجوم الخلفية */
+    .star{
+        position:absolute;
+        width:5px;
+        height:5px;
+        background:yellow;
+        border-radius:50%;
+        top:0;
+        left:0;
+        animation: twinkle 2s infinite alternate;
+    }
+
+    @keyframes twinkle{
+        0%{opacity:0.3;}
+        50%{opacity:1;}
+        100%{opacity:0.3;}
+    }
+
 </style>
 </head>
 <body>
 
 <header>
+    <div class="garland">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
     <h1>Marwal</h1>
     <p>Handmade Boho Macrame Products</p>
 </header>
@@ -145,6 +220,21 @@
     </a>
 
 </section>
+
+<div class="lantern"></div>
+
+<!-- نجوم خلفية عشوائية -->
+<script>
+    for(let i=0;i<30;i++){
+        let star=document.createElement('div');
+        star.classList.add('star');
+        star.style.top=Math.random()*100+'%';
+        star.style.left=Math.random()*100+'%';
+        star.style.width=star.style.height=(Math.random()*3+2)+'px';
+        star.style.animationDuration=(Math.random()*2+1)+'s';
+        document.body.appendChild(star);
+    }
+</script>
 
 <footer>
     <p>© 2025 Marwal Handmade</p>
