@@ -12,232 +12,232 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
 <style>
-    body{
-        font-family:'Roboto',sans-serif;
-        margin:0;
-        padding:0;
-        background:#e7d8bd; /* بيج رملي */
-        color:#333;
-        overflow-x:hidden;
-        position:relative;
-    }
+body{
+    font-family:'Roboto',sans-serif;
+    margin:0;
+    padding:0;
+    background:#e7d8bd; /* بيج رملي */
+    color:#333;
+    position:relative;
+    overflow-x:hidden;
+}
 
-    header{
-        text-align:center;
-        padding:70px 20px;
-        background:#233416; /* زيتي داكن */
-        position:relative;
-    }
+/* Header */
+header{
+    text-align:center;
+    padding:70px 20px;
+    background:#233416; /* زيتي داكن */
+    position:relative;
+}
 
-    header h1{
-        font-family:'Great Vibes',cursive;
-        font-size:4.5em;
-        color:#e7d8bd;  /* Marwal بيج رملي */
-        margin:0;
-        position:relative;
-        z-index:2;
-    }
+header h1{
+    font-family:'Great Vibes',cursive;
+    font-size:4.5em;
+    color:#e7d8bd;  /* Marwal بيج رملي */
+    margin:0;
+    position:relative;
+    z-index:2;
+}
 
-    header p{
-        font-family:'Montserrat',sans-serif;
-        color:#f5f5dc;
-        margin-top:10px;
-        font-size:1.2em;
-        position:relative;
-        z-index:2;
-    }
+header p{
+    font-family:'Montserrat',sans-serif;
+    color:#f5f5dc;
+    margin-top:10px;
+    font-size:1.2em;
+    position:relative;
+    z-index:2;
+}
 
-    /* زينة المثلثات من فوق */
-    .garland{
-        position:absolute;
-        top:10px;
-        left:50%;
-        transform:translateX(-50%);
-        display:flex;
-        gap:10px;
-        z-index:1;
-    }
+/* زينة مثلثات مقلوبة */
+.garland{
+    position:absolute;
+    top:15px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:8px;
+    z-index:1;
+}
 
-    .garland div{
-        width:20px;
-        height:20px;
-        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-        background: linear-gradient(45deg,#f8c7d1,#c6e0f5,#fdf1c7);
-        animation: float 3s infinite alternate;
-    }
+.garland div{
+    width: 25px;
+    height: 25px;
+    background: linear-gradient(45deg, #fcd5ce, #f8e1a1, #c3f0ca);
+    clip-path: polygon(50% 100%, 0 0, 100% 0); /* مثلث مقلوب */
+}
 
-    @keyframes float{
-        0%{transform:translateY(0);}
-        100%{transform:translateY(5px);}
-    }
+/* Products */
+.products{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    padding:40px 20px;
+}
 
-    /* الأقسام */
-    .categories{
-        display:flex;
-        flex-wrap:wrap;
-        justify-content:center;
-        padding:50px 20px;
-    }
+.product{
+    background:#fff;
+    border-radius:12px;
+    margin:15px;
+    padding:15px;
+    width:280px;
+    text-align:center;
+    box-shadow:0 6px 12px rgba(0,0,0,0.1);
+}
 
-    .category{
-        background:#233416; /* لون الزرار زيتي داكن */
-        color:#e7d8bd; /* لون الكتابة على الزرار */
-        border-radius:14px;
-        margin:15px;
-        width:250px;
-        text-align:center;
-        padding:25px 15px;
-        box-shadow:0 8px 18px rgba(0,0,0,0.12);
-        cursor:pointer;
-        transition:transform 0.3s, background 0.3s;
-        font-family:'Montserrat',sans-serif;
-        font-weight:700;
-        font-size:1.4em;
-    }
+.product img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+}
 
-    .category:hover{
-        transform: translateY(-8px);
-        background:#19250f; /* تغميق خفيف عند الهوف */
-    }
+.product h3{
+    margin:10px 0 5px 0;
+    color:#1e2d0f; /* زيتى داكن */
+    font-family:'Montserrat',sans-serif;
+    font-weight:700;
+    font-size:1.2em;
+}
 
-    /* التواصل */
-    .contact{
-        text-align:center;
-        padding:40px 20px;
-        background:#e7d8bd;
-    }
+.price{
+    font-weight:700;
+    color:#1e2d0f; /* زيتى داكن */
+    font-size:1.1em;
+    margin-top:5px;
+}
 
-    .contact a{
-        display:inline-block;
-        margin:8px;
-        padding:12px 22px;
-        background:#233416;
-        color:white;
-        text-decoration:none;
-        border-radius:7px;
-        font-family:'Montserrat',sans-serif;
-        font-size:16px;
-    }
+/* Contact */
+.contact{
+    text-align:center;
+    padding:40px 20px;
+    background:#e7d8bd;
+}
 
-    .contact a i{
-        margin-right:8px;
-    }
+.contact a{
+    display:inline-block;
+    margin:8px;
+    padding:12px 22px;
+    background:#233416;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+    font-family:'Montserrat',sans-serif;
+    font-size:16px;
+}
 
-    .contact a:hover{
-        background:#19250f;
-    }
+.contact a i{
+    margin-right:8px;
+}
 
-    footer{
-        text-align:center;
-        padding:20px;
-        background:#233416;
-        color:white;
-        font-family:'Montserrat',sans-serif;
-    }
+.contact a:hover{
+    background:#1b2711;
+}
 
-    /* فانوس أسفل يمين */
-    .lantern{
-        position:fixed;
-        bottom:20px;
-        right:20px;
-        width:60px;
-        height:100px;
-        background: linear-gradient(180deg,#f8c7d1,#c6e0f5,#fdf1c7);
-        border-radius:10px;
-        clip-path: polygon(50% 0%, 90% 15%, 80% 100%, 20% 100%, 10% 15%);
-        box-shadow:0 4px 10px rgba(0,0,0,0.2);
-        animation: swing 2s infinite alternate;
-        z-index:2;
-    }
+/* Footer */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#233416;
+    color:white;
+    font-family:'Montserrat',sans-serif;
+}
 
-    @keyframes swing{
-        0%{transform: rotate(-5deg);}
-        100%{transform: rotate(5deg);}
-    }
+/* فانوس جرافيكي */
+.fanous{
+    position:absolute;
+    bottom:10px;
+    right:10px;
+    width:120px;
+    height:200px;
+    background: linear-gradient(145deg, #f8e1a1, #c3f0ca, #fcd5ce);
+    clip-path: polygon(10% 0%, 90% 0%, 90% 80%, 50% 100%, 10% 80%);
+    border:2px solid #1e2d0f;
+    border-radius:5px;
+    box-shadow:0 0 15px rgba(255,223,0,0.5);
+}
 
-    /* النجوم الخلفية */
-    .star{
-        position:absolute;
-        width:5px;
-        height:5px;
-        background:yellow;
-        border-radius:50%;
-        top:0;
-        left:0;
-        animation: twinkle 2s infinite alternate;
-    }
+/* نجوم مضيئة */
+.star{
+    position:absolute;
+    width:4px;
+    height:4px;
+    background:yellow;
+    border-radius:50%;
+    animation:twinkle 2s infinite;
+}
 
-    @keyframes twinkle{
-        0%{opacity:0.3;}
-        50%{opacity:1;}
-        100%{opacity:0.3;}
-    }
+@keyframes twinkle{
+    0%, 100% {opacity:0.2;}
+    50% {opacity:1;}
+}
 
+/* Ramadan Kareem */
+.ramadan{
+    text-align:center;
+    font-family:'Great Vibes',cursive;
+    font-size:3em;
+    margin:30px 0;
+    color:#233416;
+}
 </style>
 </head>
 <body>
 
 <header>
     <div class="garland">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
     </div>
-
     <h1>Marwal</h1>
-    <p>Handmade Boho Macrame Products</p>
+    <p>Handmade Boho Macrame Products – View Prices & Contact Us</p>
 </header>
 
-<section class="categories">
-    <div class="category" onclick="window.location.href='wall-hanging.html'">
+<section class="products">
+    <div class="product">
+        <img src="https://via.placeholder.com/280x180.png?text=Wall+Hanging" alt="Wall Hanging">
         <h3>Wall Hanging</h3>
     </div>
-
-    <div class="category" onclick="window.location.href='bag.html'">
+    <div class="product">
+        <img src="https://via.placeholder.com/280x180.png?text=Bag" alt="Bag">
         <h3>Bag</h3>
     </div>
-
-    <div class="category" onclick="window.location.href='ramadan-decoration.html'">
+    <div class="product">
+        <img src="https://via.placeholder.com/280x180.png?text=Ramadan+Decoration" alt="Ramadan Decoration">
         <h3>Ramadan Decoration</h3>
     </div>
-
-    <div class="category" onclick="window.location.href='other.html'">
+    <div class="product">
+        <img src="https://via.placeholder.com/280x180.png?text=Other" alt="Other">
         <h3>Other</h3>
     </div>
 </section>
 
 <section class="contact">
     <h2>Contact Us</h2>
-
     <a href="https://www.instagram.com/marwal.11?igsh=MXJjMWE5c3l5MG1tbQ==" target="_blank">
         <i class="fab fa-instagram"></i>Instagram
     </a>
-
     <a href="https://www.facebook.com/share/1ASA6T4iAu/" target="_blank">
         <i class="fab fa-facebook"></i>Facebook
     </a>
-
+    <a href="#" target="_blank">
+        <i class="fab fa-facebook-messenger"></i>Messenger
+    </a>
 </section>
 
-<div class="lantern"></div>
+<!-- الفانوس -->
+<div class="fanous"></div>
 
-<!-- نجوم خلفية عشوائية -->
-<script>
-    for(let i=0;i<30;i++){
-        let star=document.createElement('div');
-        star.classList.add('star');
-        star.style.top=Math.random()*100+'%';
-        star.style.left=Math.random()*100+'%';
-        star.style.width=star.style.height=(Math.random()*3+2)+'px';
-        star.style.animationDuration=(Math.random()*2+1)+'s';
-        document.body.appendChild(star);
-    }
-</script>
+<!-- نجوم في الخلفية -->
+<div class="star" style="top:100px; left:50px;"></div>
+<div class="star" style="top:150px; left:200px;"></div>
+<div class="star" style="top:80px; left:300px;"></div>
+<div class="star" style="top:220px; left:400px;"></div>
+<div class="star" style="top:50px; left:500px;"></div>
+
+<!-- Ramadan Kareem -->
+<div class="ramadan">Ramadan Kareem</div>
 
 <footer>
-    <p>© 2025 Marwal Handmade</p>
+    &copy; 2025 Marwal. All rights reserved.
 </footer>
 
 </body>
