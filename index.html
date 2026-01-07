@@ -1,109 +1,154 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marwal – Ramadan Theme</title>
+<title>Marwal Handmade</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
 <style>
-body{
-    margin:0;
-    font-family: "Cairo", sans-serif;
-    background:#f5e9d6;
-    color:#1f3d2b;
-}
+    body{
+        font-family:'Roboto',sans-serif;
+        margin:0;
+        padding:0;
+        background:#e7d8bd; /* بيج رملي */
+        color:#333;
+    }
 
-/* هيدر بنفس استايلك لكن فوقه زينة رسومية */
-.header{
-    background:#1f3d2b;
-    color:white;
-    text-align:center;
-    padding:35px 5px;
-    position:relative;
-}
+    header{
+        text-align:center;
+        padding:70px 20px;
+        background:#233416; /* زيتي داكن */
+    }
 
-/* زينة حقيقية SVG */
-.header::before{
-    content:"";
-    position:absolute;
-    top:-8px;
-    left:0;
-    width:100%;
-    height:55px;
-    background:url("https://i.ibb.co/2qQqN2N/ramadan-decor-line.png");
-    background-size:contain;
-    background-repeat:no-repeat;
-    background-position:center;
-}
+    header h1{
+        font-family:'Great Vibes',cursive;
+        font-size:4.5em;
+        color:#e7d8bd;  /* Marwal بيج رملي */
+        margin:0;
+    }
 
-/* هلال جرافيك ناعم */
-body::after{
-    content:"";
-    position:fixed;
-    top:10px;
-    right:10px;
-    width:130px;
-    height:130px;
-    background:url("https://i.ibb.co/2yD9N2T/moon.png");
-    background-size:cover;
-    opacity:.8;
-}
+    header p{
+        font-family:'Montserrat',sans-serif;
+        color:#f5f5dc;
+        margin-top:10px;
+        font-size:1.2em;
+    }
 
-/* كروت المنتجات */
-.product{
-    width:90%;
-    margin:18px auto;
-    background:white;
-    border-radius:14px;
-    overflow:hidden;
-    box-shadow:0 8px 22px rgba(0,0,0,0.12);
-}
+    /* الأقسام */
+    .categories{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        padding:50px 20px;
+    }
 
-.product img{
-    width:100%;
-}
+    .category{
+        background:white;
+        border-radius:14px;
+        margin:15px;
+        width:250px;
+        text-align:center;
+        padding:25px 15px;
+        box-shadow:0 8px 18px rgba(0,0,0,0.12);
+        cursor:pointer;
+        transition:transform 0.3s;
+    }
 
-.product-info{
-    padding:15px;
-}
+    .category:hover{
+        transform: translateY(-8px);
+    }
 
-.price{
-    font-weight:bold;
-    color:#1f3d2b;
-}
+    .category h3{
+        font-family:'Montserrat',sans-serif;
+        color:#233416; /* زيتي غامق */
+        font-weight:700;
+        font-size:1.4em;
+        margin:0;
+    }
 
-/* زر تواصل */
-.btn{
-    display:block;
-    width:94%;
-    margin:15px auto 30px;
-    background:#1f3d2b;
-    color:white;
-    text-align:center;
-    padding:10px;
-    border-radius:10px;
-    text-decoration:none;
-    font-size:17px;
-}
+    /* التواصل */
+    .contact{
+        text-align:center;
+        padding:40px 20px;
+        background:#e7d8bd;
+    }
+
+    .contact a{
+        display:inline-block;
+        margin:8px;
+        padding:12px 22px;
+        background:#233416;
+        color:white;
+        text-decoration:none;
+        border-radius:7px;
+        font-family:'Montserrat',sans-serif;
+        font-size:16px;
+    }
+
+    .contact a i{
+        margin-right:8px;
+    }
+
+    .contact a:hover{
+        background:#19250f;
+    }
+
+    footer{
+        text-align:center;
+        padding:20px;
+        background:#233416;
+        color:white;
+        font-family:'Montserrat',sans-serif;
+    }
 </style>
 </head>
-
 <body>
 
-<div class="header">
-    <h1>Marwal Handmade</h1>
-</div>
+<header>
+    <h1>Marwal</h1>
+    <p>Handmade Boho Macrame Products</p>
+</header>
 
-<div class="product">
-  <img src="PUT YOUR PRODUCT IMAGE">
-  <div class="product-info">
-    <h3>اسم المنتج</h3>
-    <p>وصف بسيط للمنتج</p>
-    <p class="price">السعر: 250 ج</p>
-  </div>
-</div>
+<section class="categories">
+    <div class="category" onclick="window.location.href='wall-hanging.html'">
+        <h3>Wall Hanging</h3>
+    </div>
 
-<a class="btn" href="#">تواصل الآن</a>
+    <div class="category" onclick="window.location.href='bag.html'">
+        <h3>Bag</h3>
+    </div>
+
+    <div class="category" onclick="window.location.href='ramadan-decoration.html'">
+        <h3>Ramadan Decoration</h3>
+    </div>
+
+    <div class="category" onclick="window.location.href='other.html'">
+        <h3>Other</h3>
+    </div>
+</section>
+
+<section class="contact">
+    <h2>Contact Us</h2>
+
+    <a href="https://www.instagram.com/marwal.11?igsh=MXJjMWE5c3l5MG1tbQ==" target="_blank">
+        <i class="fab fa-instagram"></i>Instagram
+    </a>
+
+    <a href="https://www.facebook.com/share/1ASA6T4iAu/" target="_blank">
+        <i class="fab fa-facebook"></i>Facebook
+    </a>
+
+</section>
+
+<footer>
+    <p>© 2025 Marwal Handmade</p>
+</footer>
 
 </body>
 </html>
